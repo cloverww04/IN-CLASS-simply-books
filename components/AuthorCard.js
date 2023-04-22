@@ -18,6 +18,7 @@ function AuthorCard({ authorObj, onUpdate }) {
     <Card style={{ width: '18rem', margin: '10px' }}>
       <Card.Body>
         <Card.Title>{authorObj.first_name} {authorObj.last_name}</Card.Title>
+        <Card.Title>Email: {authorObj.email}</Card.Title>
         <p className="card-text bold">{authorObj.favorite && <span>Is Favorite<br /></span> }</p>
         {/* DYNAMIC LINK TO VIEW THE BOOK DETAILS  */}
         <Link href={`/author/${authorObj.firebaseKey}`} passHref>
@@ -37,7 +38,7 @@ function AuthorCard({ authorObj, onUpdate }) {
 
 AuthorCard.propTypes = {
   authorObj: PropTypes.shape({
-    image: PropTypes.string,
+    email: PropTypes.string,
     first_name: PropTypes.string,
     last_name: PropTypes.string,
     favorite: PropTypes.string,
